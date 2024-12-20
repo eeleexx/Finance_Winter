@@ -1,0 +1,546 @@
+\documentclass[twoside,openany]{book}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+
+\geometry{bindingoffset=0.5in, left=1.25in, right=1.25in, top=1.25in, bottom=1.25in}
+\onehalfspacing
+\raggedbottom
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{}{0pt}{\Huge}
+\setlength{\parindent}{15pt}
+\setlength{\parskip}{0pt} 
+\sloppy                     
+
+\begin{document}
+
+\chapter*{Essential Formulas}
+
+\subsection*{Present Value Formulas}
+\begin{itemize}
+    \item Present Value of Annuity:
+    \[ PV = \frac{C}{r}\left(1 - \frac{1}{(1+r)^n}\right) \]
+    \item Present Value of Perpetuity:
+    \[ PV = \frac{C}{r} \]
+    \item Internal Rate of Return (IRR):
+    \[ \sum_{t=1}^T \frac{C_t}{(1+IRR)^t} = 0 \]
+\end{itemize}
+
+\subsection*{Future Value Formulas}
+\begin{itemize}
+    \item Future Value of Lump-Sum:
+    \[ FV = PV(1 + r)^n \]
+\end{itemize}
+
+\subsection*{Bond Pricing Formulas}
+\begin{itemize}
+    \item Price of Zero Coupon Bond:
+    \[ P = \frac{\text{Face Value}}{(1 + r)^n} \]
+    \item Price of Coupon Bond:
+    \[ P = \sum_{t=1}^T \frac{C}{(1 + r)^t} + \frac{\text{Face Value}}{(1 + r)^T} \]
+\end{itemize}
+
+\subsection*{Arbitrage Pricing}
+\begin{itemize}
+    \item Forward Price:
+    \[ \text{Forward price}(2,4) = \frac{\text{Face Value}}{(1 + t_{24})^2} \]
+    \item Existence of Arbitrage:
+    \[ (1 + S_2)^2(1 + f_{24})^2 \neq (1 + S_4)^4 \]
+\end{itemize}
+
+\section*{CAPM (Capital Asset Pricing Model)}
+\begin{itemize}
+    \item Formula:
+    \[ E(R_i) = R_f + \beta_i [E(R_m) - R_f] \]
+    \item Beta:
+    \[ \beta_i = \frac{\text{Cov}(R_i, R_m)}{\text{Var}(R_m)} \]
+    \item Assumptions:
+    \begin{itemize}
+        \item Frictionless markets.
+        \item Risk-return tradeoff.
+        \item Single period horizon.
+        \item Homogeneous expectations.
+    \end{itemize}
+    \item Limitations:
+    \begin{itemize}
+        \item Unrealistic assumptions.
+        \item Market portfolio is unobservable.
+        \item Single factor model.
+    \end{itemize}
+\end{itemize}
+
+\section*{ICAPM (Intertemporal CAPM)}
+\begin{itemize}
+    \item Formula:
+    \[ E(R_i) = R_f + \beta_i (E(R_m) - R_f) + \sum_{k=1}^{n}\beta_{i,k} (E(F_k) - R_f) \]
+    \item Limitations:
+    \begin{itemize}
+        \item Does not specify which state variables to include.
+    \end{itemize}
+\end{itemize}
+
+\section*{APT (Arbitrage Pricing Theory)}
+\begin{itemize}
+    \item Formula:
+    \[ E(R_i) = R_f + \beta_1 (F_1 - R_f) + \beta_2 (F_2 - R_f) + \cdots \]
+    \item Assumptions:
+    \begin{itemize}
+        \item No arbitrage opportunities.
+        \item Multi-factor framework.
+        \item Frictionless markets.
+    \end{itemize}
+    \item Limitations:
+    \begin{itemize}
+        \item Does not specify what the systematic risk factors are.
+        \item Empirical complexity.
+    \end{itemize}
+\end{itemize}
+\text{$\beta_{i,k}$ - factor loading. It measures an asset's sensitivity to a specific systematic risk factor}
+\section*{Fama-French 3-Factor Model}
+\begin{itemize}
+    \item Formula:
+    \[ E(R_i) = R_f + \beta_m (E(R_m) - R_f) + \beta_{SMB} SMB + \beta_{HML} HML \]
+    \item Factors:
+    \begin{itemize}
+        \item Market factor (like CAPM).
+        \item Size factor (Small Minus Big, SMB).
+        \item Value factor (High Minus Low, HML).
+    \end{itemize}
+    \item Advantages:
+    \begin{itemize}
+        \item Accounts for size and value effects.
+        \item Addresses CAPM limitations.
+    \end{itemize}
+    \item Limitations:
+    \begin{itemize}
+        \item No arbitrage foundation.
+        \item Exclusion of other factors.
+    \end{itemize}
+\end{itemize}
+
+\section*{Portfolio Formulas}
+\begin{itemize}
+    \item Portfolio Expected Return:
+    \[ E(R_p) = w_A E(R_A) + w_B E(R_B) \]
+    \item Portfolio Variance:
+    \[ \text{Var}(R_p) = w_A^2 \sigma_A^2 + w_B^2 \sigma_B^2 + 2w_Aw_B\text{Cov}(R_A, R_B) \]
+    \item Portfolio Standard Deviation:
+    \[ \sigma_p = \sqrt{\text{Var}(R_p)} \]
+\end{itemize}
+
+\chapter*{Chapter 2: Introduction to Financial Systems}
+
+\section*{\textbf{Key Terms and Definitions}}
+
+\textbf{Bid-ask spread:} The difference between the best ask (lowest price charged for immediate purchase of stock) and the best bid (highest price received for an immediate sale of a unit of stock).
+
+\textbf{Brokers:} Agents of investors who match buyers with sellers of securities. They earn a commission for their service.
+
+\textbf{Callable bonds:} Bonds that can be repaid early (i.e., before maturity) by the issuer if he/she so chooses. Early repayment might be restricted to a specified date (European) or may be allowed at any time prior to maturity (American).
+
+\textbf{Common stocks:} Securities that represent ownership interests in the firm. Common stockholders receive dividends (when distributed), take capital gains (or losses) when the stock price on the market increases (or decreases), and have the right to vote.
+
+\textbf{Corporate bonds:} Debt instruments issued by large corporations when they need long-term financing. They usually make interest payments twice a year (semi-annually).
+
+\textbf{Dealers:} Agents who link buyers and sellers by buying and selling securities. They hold inventories of securities and sell these securities for a slightly higher price than they paid for them. They thus earn the bid-ask spread.
+
+\textbf{Depository institutions:} Intermediaries with a significant proportion of their funds derived from customer deposits – include: commercial banks, savings institutions, and credit unions.
+
+\textbf{Bonds:} Securities that promise to make periodic payments of a sum of money for a specified period of time.
+
+\textbf{Brokered markets:} Markets where brokers perform an active search role to match buyers and sellers. They do not provide liquidity but they find liquidity. They hold no inventory as they do not participate in the trade themselves.
+
+\textbf{Capital markets:} Markets in which long-term securities are traded. These long-term instruments include equity instruments (infinite life), government bonds, and corporate bonds (original maturity of one year or greater).
+
+\textbf{Contractual savings institutions:} Intermediaries that acquire funds at periodic intervals on a contractual basis. The industry is classified into two major groups: insurance companies and pension funds.
+
+\textbf{Coupon bonds:} Contractual agreements by borrowers to make regular payments (known as coupons or interest) until a specified date (the maturity date), when the amount borrowed (principal) is repaid.
+
+\textbf{Debt instruments:} Instruments that promise the payment of given sums to the investor. Examples of debt instruments are bills, notes, and bonds.
+
+\textbf{Direct finance:} A system where borrower-spenders borrow funds directly from lenders in the financial markets by selling them securities.
+
+\textbf{Equity:} Represents claims to shares in the net income and assets of a firm, and they do not have a maturity date.
+
+\textbf{Eurobonds:} Bonds denominated in the currency of one country but actually sold or traded in another, different country.
+
+\textbf{Finance companies:} Intermediaries that make loans to individuals and corporations by providing consumer lending, business lending, and mortgage financing. They do not accept deposits.
+
+\textbf{Financial intermediaries:} Economic agents who specialize in the activities of buying and selling (at the same time) financial contracts (loans and deposits) and securities (bonds and stocks).
+
+\textbf{Floating rate bonds:} Bonds that have coupon rates which vary over the bond's lifetime. Generally, the floating coupon rate is set at a premium over some market interest rate (e.g., LIBOR or the US T-bill rate) and is reset on a pre-specified basis.
+
+\textbf{Foreign bond:} A bond issued by a borrower in a country different from that borrower's country of origin (i.e., the borrower is selling debt abroad). The bond is denominated in the currency of the country in which it is sold.
+
+\textbf{Government notes:} Debt instruments issued in the USA by the US Treasury to finance national debt with an original maturity of one to ten years.
+
+\textbf{Index-linked bonds:} Bonds where coupons and principal grow in line with inflation (in the relevant country).
+
+\textbf{Insurance companies:} Intermediaries whose primary objective is to protect individuals and firms (known as policy-holders) from adverse events. They receive premiums from policy-holders and promise to pay compensation to policy-holders if particular events occur.
+
+\textbf{Interest rate term structure:} The relationship between interest rates and the time to maturity. A yield curve plots this relationship.
+
+\textbf{Investment intermediaries:} A group of financial intermediaries that includes mutual funds, finance companies, investment banks, and securities firms.
+
+\textbf{Lender-savers:} Units who have saved surplus funds and can lend them.
+
+\textbf{Liquidity premium theory:} The theory that asserts that, in a world of uncertainty, investors and lenders will want to hold assets which can be converted into cash quickly. Therefore they will demand a liquidity premium for holding long-term debt.
+
+\textbf{Long-term credit banks:} Banks that provide long- and medium-term loans (mainly to large corporations) by using the funds raised from medium- and short-term bonds.
+
+\textbf{Market segmentation theory:} The theory that suggests that the bond market is actually made up of a number of separate markets distinguished by time to maturity, each with their own supply and demand conditions.
+
+\textbf{Money markets:} Financial markets where only short-term debt instruments (maturity of less than one year) are traded.
+
+\textbf{Money market securities:} Debt securities with maturities less than a year.
+
+\textbf{Municipal bonds:} Debt instruments issued by US local, county, or state governments to finance public interest projects.
+
+\textbf{Mutual funds:} Intermediaries that pool resources from many individuals and companies and invest these resources in diversified portfolios of bonds, stocks, and money market instruments.
+
+\textbf{Order-driven markets:} Markets where buyers and sellers trade directly without any intermediation.
+
+\textbf{Organised exchanges:} Secondary markets where buyers and sellers (through their brokers) transact in one central location to conduct trades.
+
+\textbf{Over-the-counter markets:} Secondary markets where dealers at different locations have an inventory of securities and are ready to buy and sell these securities ‘over-the-counter' to anyone willing to accept their price.
+
+\textbf{Perpetual bonds:} Bonds (also known as consols) that never mature. They simply pay coupons of a specified amount forever.
+
+\textbf{Preferred stocks:} Equity claims with limited ownership rights in comparison to common stocks.
+
+\textbf{Puttable bonds:} Bonds where the redemption date is under the control of the holder (i.e., the opposite to the callable bond case).
+
+\textbf{Retail banks:} Banks that traditionally provide intermediation and payment services to individuals and small businesses dealing with a large number of small value transactions.
+
+\textbf{Savings institutions:} Intermediaries that historically concentrated mostly on residential mortgages by acquiring funds primarily through savings deposits.
+
+\textbf{Secondary markets:} Markets in which securities that have been previously issued are resold.
+
+\textbf{Securities firms:} Firms that assist in the trading of existing securities in the secondary markets.
+
+\textbf{Shares:} Securities that represent a share of ownership in the firm.
+
+\textbf{Treasury bills:} Money market securities issued by the US Treasury with an original maturity of less than one year.
+
+\textbf{Trust banks:} Banks that provide long-term loans to corporations, in addition to a range of services (ordinary banking services, asset management, investment advisory services).
+
+\textbf{Yield curve:} A curve that plots the yields (interest rates) of bonds with different maturities but the same risk.
+
+\textbf{Zero coupon bonds:} Instruments under which a borrower promises, at the current time, to pay one specified nominal sum (face value) to the lender at one specified future date.
+
+\textbf{Borrower-spenders:} Units with a shortage of funds who must borrow funds to finance their spending.
+
+\textbf{Building societies:} Intermediaries that were originally devoted to providing mortgages.
+
+\textbf{Commercial banks:} Banks that accept deposits (liabilities) to make loans (assets) and to buy government securities.
+
+\textbf{Convertible bonds:} Debt instruments which can be converted into a share in the firm's equity (either at a specific date or at any time).
+
+\textbf{Credit unions:} Non-profit institutions mutually organised and owned by their members (depositors).
+
+\textbf{Default risk premium:} The extra amount charged to a borrower to compensate for the risk that he or she will default on a loan.
+
+\textbf{Economic function of a financial system:} To channel funds from units who have saved surplus funds to units who have a shortage of funds.
+
+\textbf{Expectations theory:} The theory that states that in equilibrium, the long-term rate is a geometric average of today's short-term rate and expected short-term rates in the future.
+
+\textbf{Financial markets:} Markets in which funds are moved from people who have an excess of available funds (and lack of investment opportunities) to people who have investment opportunities (and lack of funds).
+
+\textbf{Government bonds:} Debt instruments issued by national governments to finance national debt.
+
+\textbf{Indirect finance:} A system where a financial intermediary stands between the lender-savers and the borrower-spenders, helping to transfer funds from one to the other.
+
+\textbf{Investment banks:} Banks that assist corporations or governments in the issue of new debt or equity securities.
+
+\textbf{Limit orders:} Instructions to trade at the best price available but only if it is no worse than the limit price specified by the trader.
+
+\textbf{Market makers:} Dealers who quote prices and stand ready to buy and sell at these quotes, so that they provide liquidity.
+
+\textbf{Market orders:} Instructions to trade at the best price currently available in the market.
+
+\textbf{Mutual/cooperative banks:} Banks that are either mutual organisations owned by their depositors or operated in the public interest.
+
+\textbf{Ordinary banks:} Banks that provide mainly short-term loans to individuals and corporations.
+
+\textbf{Pension funds:} Funds that provide retirement income (in the form of annuities) to employees covered by a pension plan. They receive contributions from employers or employees and invest these amounts in corporate bonds and stocks.
+
+\textbf{Primary markets:} Financial markets in which new issues of financial securities (both bonds and stocks) are sold to initial buyers.
+
+\textbf{Savings banks:} Banks that can make loans only to non-industrial or non-commercial entities or individuals.
+
+\textbf{Securities:} Financial claims on the issuer's future income or assets.
+
+\textbf{Stocks:} Securities that represent a share of ownership in the firm.
+
+\textbf{Wholesale banks:} Banks that deal with a smaller number of larger value transactions.
+
+\section*{Chapter 2: Introduction to Financial Systems - Answers}
+
+\textbf{1a. What is a financial system? Frame your answer both from a structural and a functional perspective.}
+
+From a \textit{functional} perspective, financial systems perform two essential economic functions: the credit function and the monetary function. The credit function provides the mechanisms by which funds are transferred from units in surplus to units with a shortage of funds to directly or indirectly facilitate lending and borrowing. This also enables wealth holders to adjust the composition of their portfolios. The monetary function provides payment mechanisms and mechanisms for risk transfer.
+
+From a \textit{structural} perspective, financial systems comprise financial intermediaries, securities, and financial markets.
+
+\textbf{1b. What is the primary function of depository institutions? How does this function compare with the primary function of insurance companies?}
+
+The primary function of depository institutions is to accept deposits (liabilities) to make loans (assets) and to buy government securities. This function is centered around providing liquidity and channeling funds from savers to borrowers.
+
+Insurance companies, in contrast, primarily protect individuals and firms from adverse events. They acquire premiums and use them to pay compensation if specified events occur. While both channel funds, depository institutions focus on short- to medium-term lending and borrowing, emphasizing liquidity, whereas insurance companies handle long-term risks and have less emphasis on immediate liquidity.
+
+\textbf{1c. What is a mutual fund? What are the differences between short-term and long-term mutual funds? Where do mutual funds rank in terms of asset size among all financial intermediaries in the USA?}
+
+A mutual fund pools resources from many individuals and companies and invests these resources in diversified portfolios of bonds, stocks, and money market instruments.
+
+Long-term funds comprise bond funds (funds that contain fixed-income debt securities), equity funds (funds that contain stock securities), and hybrid funds (funds that contain both debt and stock securities). Short-term funds are represented by money market mutual funds, funds that contain various mixes of money market securities and partially allow shareholders to write checks against the value of their holdings.
+
+In the USA, mutual funds are the second most important financial intermediary in terms of asset size, larger than the insurance industry but smaller than the commercial banking industry.
+
+\textbf{2a. Explain how securities firms differ from investment banks. Which categories of firms are there in this industry? In what way are they financial intermediaries?}
+
+Investment banks assist corporations or governments in the issue of \textit{new} debt or equity securities, including origination, underwriting, and placement in primary financial markets. They also provide financial advisory services on corporate finance activities (e.g., mergers and acquisitions). Their income is primarily derived from fees charged to clients.
+
+Securities firms assist in the \textit{trading} of \textit{existing} securities in secondary markets. They are categorized as brokers (matching buyers and sellers) and dealers (buying and selling securities from their inventory). Brokers earn commissions, while dealers profit from the bid-ask spread.
+
+The US securities firms and investment banking industry includes national full-line firms (acting as both broker-dealers and underwriters, such as Merrill Lynch and Morgan Stanley), national full-line firms specializing in corporate finance (Goldman Sachs and Smith Barney), specialized investment bank subsidiaries of commercial banks, specialized discount brokers, specialized electronic trading securities firms (like E*trade), and regional securities firms. Both investment banks and securities firms are financial intermediaries because they channel funds, albeit indirectly, by facilitating the buying and selling of securities.
+
+\textbf{2b. What distinguishes stocks from bonds? What are the differences with reference to the risk/return relationship?}
+
+Debt instruments (like bonds) promise the payment of given sums to the investor. Bonds represent debt owed by the issuer to the investor, paying periodic interest (coupon payments) until maturity, when the par value is repaid.
+
+Equity instruments (like stocks) represent claims to shares in the net income and assets of a firm and have no maturity date. Firms are not contractually obliged to pay dividends to equity holders, and debt holders must be paid before equity holders. Equity claims are riskier than debt instruments. Equity also confers ownership rights, allowing holders to benefit from increased income or asset value (capital gains) and to vote. Preferred stocks are a type of equity with a fixed dividend but usually without voting rights.
+
+The risk/return relationship is that equity claims are riskier than debt instruments. Higher risk is associated with higher expected returns. Investors demand a higher return to compensate for the greater uncertainty associated with equity investments compared to bonds.
+
+\textbf{2c. 'Because corporations do not actually raise any funds in secondary markets, they are less important to the economy than primary markets'. Comment.}
+
+This statement is incorrect. While corporations initially raise funds in primary markets (selling new issues of securities), secondary markets are crucial for several reasons: they increase the liquidity of securities, making them more attractive to investors and facilitating future primary market issuances. Secondary markets also set the prices of securities, influencing the price at which firms can sell in the primary market. The efficient functioning of secondary markets is therefore essential for the efficient functioning of primary markets and overall economic activity.
+
+\textbf{3a. With reference to examples, discuss globalization of the financial markets around the world.}
+
+Globalization of financial markets refers to the increasing integration and interconnectedness of financial markets worldwide. Several examples illustrate this:
+
+The New York Stock Exchange (NYSE) and Euronext: The NYSE's merger with Euronext (a pan-European exchange formed from the Amsterdam, Brussels, and Paris exchanges) demonstrates cross-border integration, creating a larger, more liquid exchange group offering diverse financial products and services. This integration is a direct response to the increasing globalization of capital markets, aiming to provide participants with increased liquidity and lower transaction costs.
+
+London Stock Exchange: The London Stock Exchange's merger with Borsa Italiana and its significant role in the Eurobond market (bonds denominated in one currency but sold in another) showcase the global reach of financial markets, with London serving as a major hub for international bond trading.
+
+Tokyo Stock Exchange: While a significant domestic market, the Tokyo Stock Exchange also facilitates international transactions, highlighting the global nature of financial activities.
+
+\textbf{3b. Compare and contrast quote- and order-driven markets.}
+
+In \textit{quote-driven dealer markets}, a dealer or market-maker is on one side of every trade. Dealers hold an inventory of securities, profiting from the bid-ask spread and speculation. The NASDAQ (prior to 1997) is an example, though it now incorporates order-driven features.
+
+\textit{Order-driven markets} involve buyers and sellers trading directly without intermediation. Many are auction markets with formalized rules for price discovery, where buyers seek the lowest and sellers the highest prices. SETS (Stock Exchange Electronic Trading Services) of the London Stock Exchange is an example, although it has quote-driven features as well. The NYSE is also a hybrid market, with specialists acting as market-makers but also incorporating public limit orders.
+
+\textbf{3c. Explain the purpose of money markets and give examples of the types of money markets and their users.}
+
+Money markets are financial markets where short-term debt instruments (maturity less than one year) are traded. Their purpose is to allow firms and financial institutions to manage their short-term liquidity needs, earning interest on temporary surpluses.
+
+Examples include the US Treasury bill market (short-term government debt), and the commercial paper market (short-term corporate debt). Users include firms (managing cash flow), financial institutions (managing liquidity), and governments (financing short-term deficits).
+
+\chapter*{Chapter 7: Capital Budgeting and Valuation}
+
+\section*{\textbf{Key Terms and Definitions}}
+
+\textbf{Additivity property:} The principle that present values of multiple cash flows can be summed to find the present value of the combined cash flows. This property also applies to the Net Present Value (NPV).
+
+\textbf{Dividend discount model:} A model that values common stocks as the present value of future periodic dividends that stockholders expect the firm to distribute forever.
+
+\textbf{Incremental cash flows:} The additional cash flows generated by a project, excluding sunk costs (costs incurred regardless of project acceptance).
+
+\textbf{Multiple IRR:} A situation where more than one internal rate of return (IRR) can simultaneously satisfy the equation that sets the net present value (NPV) equal to zero. This can occur due to changes in the structure of cash flows over time.
+
+\textbf{Opportunity cost of capital:} The rate of return offered by equivalent investment alternatives in the capital market, representing the return forgone by investing in a specific project instead of those alternatives.
+
+\textbf{Zero-growth model:} A simplified dividend discount model that assumes a constant dividend stream 
+(\(\text{DIV} = \text{DIV}_1 = \text{DIV}_2 = \ldots = \text{DIV}_\infty\)) to value common stocks.
+\textbf{Capital budgeting techniques:} Methods used by firms to evaluate real assets and choose among alternative real assets. These include Net Present Value (NPV), Internal Rate of Return (IRR), and payback period.
+
+\textbf{Gordon growth model:} A constant growth model of equity valuation that assumes expected dividends grow at a constant rate (g) per annum to value common stocks.
+
+\textbf{Internal Rate of Return (IRR):} The discount rate that makes the net present value (NPV) of a project equal to zero.
+
+\textbf{Mutually exclusive projects:} A set of projects where only one can be chosen at a given time.
+
+\textbf{Payback period method:} A real asset appraisal technique that evaluates projects based on the number of years needed to recover the initial capital investment.
+
+\textbf{Discounted cash flow:} The process of calculating the present value of future cash flows to determine the value of an asset (real or financial).
+
+\textbf{Hurdle rate:} The required rate of return, often the risk-free interest rate for riskless cash flows, that a project must exceed to be acceptable using the IRR method.
+
+\textbf{Limited funds:} A situation where the amount of money available is less than the total investment cost of all the projects under consideration.
+
+\textbf{Net Present Value (NPV):} The sum of the present values of all the cash inflows generated by a project less the present value of the cash investment(s) associated with that project.
+
+\textbf{Present value:} The value today of a cash flow received in t years' time, calculated by multiplying the cash flow by a discount factor.
+
+\chapter*{Chapter 8: Securities and Portfolios – Risk and Return}
+
+\section*{\textbf{Key Terms and Definitions}}
+
+\textbf{Actual return:} The amount received from an investment divided by the amount invested. In the context of risky assets, the actual return is a random variable.
+
+\textbf{Beta ($\beta$): } A measure of the sensitivity of an individual security's return to market movements under the Capital Asset Pricing Model (CAPM). It is calculated as the covariance of the returns on the asset with the return on the market portfolio, divided by the variance of the market return.
+
+\textbf{Capitalization weights:} The weights used in constructing a market portfolio, where the weight on each asset is its market capitalization divided by the total market capitalization of all risky assets.
+
+\textbf{Diversification:} The process of reducing risk by forming portfolios (or including additional assets in a portfolio), which works because correlations between returns are less than perfect in real stock return data.
+
+\textbf{Expected return:} The weighted average of all possible returns on a risky asset, where the weights are the probabilities of occurrence of each return.
+
+\textbf{Feasible region (or feasible set):} The set of all points representing portfolios that can be constructed from a given set of assets using every possible weighting scheme.
+
+\textbf{Mean-standard deviation:} A framework that analyzes investor preferences based solely on the expected return (mean) and standard deviation (risk) of a portfolio.
+
+\textbf{Optimal portfolio:} The portfolio that maximizes expected return for a given level of risk, or minimizes risk for a given level of expected return. The specific optimal portfolio will depend on investor risk preferences.
+
+\textbf{Risk-free asset:} An asset with an expected return (Rf) and zero standard deviation. Examples are US Treasury bills.
+
+\textbf{Two-fund separation:} A key result of mean-standard deviation portfolio theory stating that any risk-averse investor can form an optimal portfolio by combining a risk-free asset and a specific risky asset portfolio (the tangent portfolio).
+
+\textbf{Arbitrage Pricing Theory (APT):} An asset pricing model that states that assets with the same factor sensitivities must offer the same expected returns in financial market equilibrium, assuming no arbitrage opportunities.
+
+\textbf{Asset pricing models:} Models that aim to determine the correct, arbitrage-free, or fair price of an asset in equilibrium. Examples are CAPM and APT.
+
+\textbf{Capital Asset Pricing Model (CAPM): } An asset pricing model stating that in equilibrium the optimal risky portfolio must be the market portfolio, and the expected return of a risky asset is equal to the risk-free rate plus a market risk premium multiplied by the asset's beta.
+
+\textbf{Capital market line (CML): } In the presence of a risk-free asset, the efficient set becomes the CML, representing the optimal combinations of the risk-free asset and the optimal risky asset portfolio.
+
+\textbf{Correlation coefficient ($\rho$): } A statistical measure (between -1 and +1) of the degree to which two returns tend to move together.
+
+\textbf{Diversifiable risk (or unique, specific, non-systematic risk): } The risk peculiar to a company or its immediate competitors, which can be eliminated through diversification.
+
+\textbf{Efficient frontier:} The set of portfolios on the mean-standard deviation frontier that maximize expected return for a given standard deviation or minimize standard deviation for a given expected return.
+
+\textbf{Efficient set:} The set of portfolios on the mean-standard deviation frontier that are efficient (i.e., those on the efficient frontier).
+
+\textbf{Expected risk premium:} The amount by which the expected return of an asset or portfolio is expected to exceed the risk-free rate.
+
+\textbf{Factor models:} Models that assume common variations in stock returns are generated by movements in one or more factors (e.g., macroeconomic conditions).
+
+\textbf{Frontier:} A line on a graph that represents the set of all efficient portfolios, those offering the best combination of expected return and risk.
+
+\textbf{Market risk (or systematic, undiversifiable risk): } The risk of the market as a whole; the risk that cannot be eliminated through diversification.
+
+\textbf{Minimum-variance portfolio:} A portfolio that offers the minimum risk (variance) for a given set of assets.
+
+\textbf{Modern portfolio theory:} A theory that analyzes how risk-averse investors can construct portfolios to maximize expected return for a given level of risk.
+
+\textbf{Portfolio:} A combination of different assets held by an investor.
+
+\textbf{Risk:} A measure of the variability of returns around the expected return. Often measured using standard deviation.
+
+\textbf{Security market line (SML): } A graphical representation of the CAPM equilibrium relationship between risk (beta) and expected return.
+
+\textbf{Standard deviation ($\sigma$): } A statistical measure of the dispersion (variability) of returns around the average return; the square root of the variance.
+
+\textbf{Variance:} A statistical measure of the variability of returns around the expected return.
+
+\section*{Chapter 8: Securities and Portfolios – Risk and Return - Answers to Sample Questions}
+
+\textbf{1a. 'The more risk-averse investors are, the more likely they are to diversify.' Is this statement true, false or uncertain? Explain your answer.}
+
+The statement is \textbf{true}. Risk-averse investors, by definition, seek to minimize risk. Diversification reduces risk by combining assets with less than perfectly correlated returns. The lower the correlation between asset returns, the greater the risk reduction achieved through diversification. Therefore, risk-averse investors have a strong incentive to diversify.
+
+\textbf{1b. When the number of assets included in a portfolio increases, what is the effect on the portfolio standard deviation? When the number of assets increases towards infinity, towards what value does the portfolio standard deviation converge to?}
+
+When the number of assets in a portfolio increases, the portfolio standard deviation decreases. This is because diversification reduces firm-specific risk (diversifiable risk). As the number of assets increases towards infinity, assuming assets are not perfectly correlated, the portfolio standard deviation converges to the level of market risk (systematic risk) remaining in the portfolio.
+
+\textbf{1c. What does the mean-standard deviation frontier look like in the presence of two risky assets (and no risk-free asset)? How does it change when there is a risk-free asset? Why does one line, the capital market line, dominate all the other possible portfolio combinations?}
+
+With two risky assets and no risk-free asset, the mean-standard deviation frontier is a curve. The lower portion represents portfolios with lower returns for given levels of risk and is not relevant for risk-averse investors. The upper portion, the efficient frontier, shows portfolios that maximize expected return for a given standard deviation or minimize standard deviation for a given expected return.
+
+When a risk-free asset is introduced, a range of combinations of the risk-free asset and portfolios of risky assets exist. These combinations trace out a line, the capital market line (CML). One line dominates because all points along the CML offer superior returns for a given level of risk compared to portfolios not on the CML.
+
+\textbf{1d. Explain the tangent portfolio.}
+
+The tangent portfolio is the portfolio of risky assets that is tangent to the capital market line. It represents the optimal portfolio of risky assets for an investor to combine with the risk-free asset to create an efficient portfolio. The specific combination of the risk-free asset and tangent portfolio will vary depending on the investor's risk preferences.
+
+\textbf{2. An investor has two assets available named X and Y. Asset X has an expected return of 7 percent and a standard deviation of 4 percent. Asset Y has an expected return of 12 percent and a standard deviation of 6 percent.}
+
+\textbf{2a. Assume the investor places portfolio weight ½ on asset X, and ½ on asset Y. Assuming that the returns to the two assets are perfectly positively correlated, calculate the expected return and the standard deviation of the portfolio.}
+
+The expected return of the portfolio (E(Rp)) is calculated as the weighted average of the expected returns of assets X and Y:
+
+E(Rp) = (0.5 * 0.07) + (0.5 * 0.12) = 0.095 or 9.5%
+
+With perfectly positive correlation (\(\rho = +1\)), the portfolio standard deviation (\(\sigma_p\)) is simply the weighted average of the individual standard deviations:
+\[
+\sigma_p = w_1 \sigma_1 + w_2 \sigma_2
+\]
+$\sigma_p$ = (0.5 * 0.04) + (0.5 * 0.06) = 0.05 or 5%
+
+\textbf{2b. How would your answer change if the correlation coefficient were 0.5?}
+
+If the correlation coefficient (\(\rho\)) were 0.5, the portfolio standard deviation would be calculated using the formula:
+\[
+\sigma_p = \sqrt{w_1^2 \sigma_1^2 + w_2^2 \sigma_2^2 + 2 w_1 w_2 \sigma_1 \sigma_2 \rho}
+\]
+$\sigma_p^2 = w_X^2 \sigma_X^2 + w_Y^2 \sigma_Y^2 + 2w_X w_Y \rho \sigma_X \sigma_Y$
+
+Where:
+$w_X$ = weight of asset X = 0.5
+$w_Y$ = weight of asset Y = 0.5
+$\sigma_X$ = standard deviation of asset X = 0.04
+$\sigma_Y$ = standard deviation of asset Y = 0.06
+\(\rho\) = correlation coefficient = 0.5
+Substituting these values:
+
+$\sigma_p^2 = (0.5)^2 (0.04)^2 + (0.5)^2 (0.06)^2 + 2(0.5)(0.5)(0.5)(0.04)(0.06)$
+$\sigma_p^2 = 0.0004 + 0.0009 + 0.0006 = 0.0019$
+$\sigma_p = \sqrt{0.0019} \approx 0.0436$ or 4.36%
+
+The expected return would remain unchanged at 9.5%.
+
+\textbf{2d. In general, what does the mean-standard deviation frontier look like when the correlation coefficient is between -1 and +1?}
+
+When the correlation coefficient (\(\rho\)) is between \(-1\) and \(+1\), the mean-standard deviation frontier is a curve. The curvature reflects the benefits of diversification. The lower the correlation, the greater the curvature and the more effective diversification is at reducing portfolio risk. 
+
+When \(\rho = +1\) (perfect positive correlation), the frontier is a straight line, and diversification offers no risk reduction. When \(\rho = -1\) (perfect negative correlation), the frontier is made up of two straight lines.
+
+\chapter*{Limitations of the CAPM}
+
+The \textbf{Capital Asset Pricing Model (CAPM)} is a foundational tool in finance, but it has several theoretical and empirical limitations.
+
+\section*{1. Assumptions Are Unrealistic}
+CAPM relies on several simplifying assumptions that do not align with real-world conditions:
+\begin{itemize}
+    \item \textbf{Mean-Variance Criterion}: The CAPM assumes that investors care only about the mean (expected returns) and variance (risk) of their portfolios. This implies that returns are normally distributed, which is often not true in practice due to skewness and heavy tails.
+    \item \textbf{Homogeneous Information}: All investors are assumed to have access to the same information and agree on expected returns, variances, and covariances. In reality, information asymmetry is common.
+    \item \textbf{Frictionless Markets}: The model assumes no taxes, transaction costs, or restrictions on borrowing and short-selling. Real markets involve such frictions, which affect investor behavior and asset pricing.
+\end{itemize}
+
+\section*{2. Empirical Limitations}
+While the CAPM is elegant in theory, it often fails to explain real-world observations:
+\begin{itemize}
+    \item \textbf{Slope of the Security Market Line (SML) is Too Flat}:
+    Empirical studies show that the actual relationship between beta and returns is flatter than CAPM predicts:
+    \begin{itemize}
+        \item High-beta stocks tend to \textit{underperform} CAPM predictions.
+        \item Low-beta stocks tend to \textit{overperform} CAPM predictions.
+    \end{itemize}
+
+    \item \textbf{Value and Size Effects}:
+    Empirical evidence contradicts the CAPM's predictions with the discovery of additional risk-return relationships:
+    \begin{itemize}
+        \item \textbf{Size Effect}: Small-cap stocks often outperform large-cap stocks, even after adjusting for beta.
+        \item \textbf{Value Effect}: High book-to-market (value) stocks outperform low book-to-market (growth) stocks, independent of beta.
+    \end{itemize}
+
+    \item \textbf{Multifactor Models Perform Better}:
+    Models like the Fama-French 3-Factor Model incorporate additional systematic risk factors (size and value) and provide better explanations of cross-sectional returns compared to CAPM.
+
+    \item \textbf{Roll's Critique}:
+    Richard Roll (1977) argued that CAPM is not testable because:
+    \begin{itemize}
+        \item The market portfolio (a key input) is unobservable and cannot include all risky assets.
+        \item Proxies like stock indices may not be mean-variance efficient, making it impossible to validate or refute the CAPM.
+    \end{itemize}
+\end{itemize}
+
+Despite these limitations, the CAPM remains an important starting point for understanding the relationship between risk and return and has inspired more robust models like the Fama-French multifactor frameworks.
+
+
+
+\end{document}
